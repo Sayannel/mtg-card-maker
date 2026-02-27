@@ -1,0 +1,272 @@
+@font-face {
+    font-family: "NudMotoyaExAporo W6";
+    src: url("https://db.onlinewebfonts.com/t/dc40e8e1aeec2ee6837c42e9be729bff.eot");
+    src: url("https://db.onlinewebfonts.com/t/dc40e8e1aeec2ee6837c42e9be729bff.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/dc40e8e1aeec2ee6837c42e9be729bff.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/dc40e8e1aeec2ee6837c42e9be729bff.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/dc40e8e1aeec2ee6837c42e9be729bff.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/dc40e8e1aeec2ee6837c42e9be729bff.svg#NudMotoyaExAporo W6")format("svg");
+}
+
+@font-face {
+    font-family: "Beleren";
+    src: url("./assets/fonts/BelerenBold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "MatrixBoldSmallCaps";
+    src: url("./assets/fonts/MatrixBoldSmallCaps.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+#model {
+    background: url("https://img.mpcautofill.com/104wkjtVNfgfiIDt2OvTKeUQQNIsnhA_E-large-google_drive") no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    opacity: 0%;
+    pointer-events: none;
+}
+
+/* Root card size */
+.cardRoot {
+    position: relative;
+    width: 744px;
+    height: 1039px;
+    overflow: hidden;
+    border-radius: 14px;
+    border: 1px solid #2a2c31;
+    background: #d8c7a2;
+    font-family: 'MatrixBoldSmallCaps';
+}
+
+/* For empty state */
+.cardEmpty {
+    display: grid;
+    place-items: center;
+}
+.cardEmptyText {
+    opacity: .7;
+}
+
+/* Common layer */
+.layer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+/* Background */
+.layerBg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Frame overlay */
+.layerFrame {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;
+}
+
+/* Artwork zone */
+.layerArt {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 18px;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.artImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: contrast(1.02) saturate(0.95);
+}
+
+.artPlaceholder {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    background: rgba(0,0,0,.06);
+    color: rgba(0,0,0,.55);
+    font-size: 16px;
+}
+
+/* Hanko */
+.layerHanko {
+    position: absolute;
+    left: 572px;
+    top: 612px;
+    width: 110px;
+    height: 110px;
+    opacity: .85;
+}
+
+/* Title panel */
+.titlePanel {
+    position: absolute;
+    left: 94px;
+    top: 86px;
+    width: 81px;
+    height: fit-content;
+    border-radius: 16px;
+    background: firebrick;
+    display: flex;
+    align-items: start;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    pointer-events: none;
+    justify-content: center;
+    font-family: "NudMotoyaExAporo W6";
+}
+
+.titlePanel:before {
+    content: '';
+    position: absolute;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    border-radius: 16px;
+    border: 3px solid firebrick;
+    top: -8px;
+    left: -8px;
+}
+
+.titleVertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    font-size: 28px;
+    color: rgba(255,255,255,.92);
+    line-height: 1;
+}
+
+.titleChar {
+    display: block;
+}
+
+/* Mana row */
+.manaRow {
+    position: absolute;
+    right: 0px;
+    top: 76px;
+    display: flex;
+    gap: 6px;
+    pointer-events: none;
+    width: 100%;
+    flex-direction: row-reverse;
+    padding-right: 60px;
+}
+
+.manaIconWrap {
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    overflow: hidden;
+    border: 2px solid rgb(13 9 12);
+}
+
+.manaIcon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Type line */
+.typeLine {
+    position: absolute;
+    left: 44px;
+    top: 690px;
+    width: 656px;
+    height: 56px;
+    border-radius: 14px;
+    background: rgba(245,235,215,.75);
+    border: 2px solid rgba(30,20,10,.35);
+    display: flex;
+    align-items: center;
+    padding: 0 18px;
+    pointer-events: none;
+}
+
+.typeText {
+    font-family: serif;
+    font-size: 22px;
+    color: rgba(20,10,5,.92);
+}
+
+/* Rules */
+.rulesBox {
+    position: absolute;
+    left: 44px;
+    top: 750px;
+    width: 656px;
+    height: 250px;
+    border-radius: 18px;
+    background: rgba(245,235,215,.82);
+    border: 2px solid rgba(30,20,10,.35);
+    padding: 18px;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.oracleText {
+    font-family: serif;
+    font-size: 20px;
+    line-height: 1.22;
+    color: rgba(20,10,5,.92);
+    white-space: pre-wrap;
+}
+
+.rulesGap {
+    height: 10px;
+}
+
+.flavorText {
+    margin-top: auto; /* met flavor plutôt vers le bas */
+    font-family: serif;
+    font-size: 16px;
+    font-style: italic;
+    line-height: 1.25;
+    color: rgba(20,10,5,.78);
+    white-space: pre-wrap;
+}
+
+/* Stats */
+.statsBox {
+    position: absolute;
+    left: 560px;
+    top: 952px;
+    width: 140px;
+    height: 56px;
+    border-radius: 14px;
+    background: rgba(245,235,215,.88);
+    border: 2px solid rgba(30,20,10,.35);
+    display: grid;
+    place-items: center;
+    pointer-events: none;
+}
+
+.statsText {
+    font-family: serif;
+    font-size: 22px;
+    color: rgba(20,10,5,.92);
+}
